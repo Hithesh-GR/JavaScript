@@ -371,15 +371,15 @@ isPrime(number)
     {
     var y0 = year - Math.floor((14 - month) / 12);
     var x = y0 + Math.floor((y0 / 4)) - Math.floor((y0 / 100)) + Math.floor((y0 / 400));
-    m0 = month + 12 * Math.floor((14 - month) / 12) - 2;
+    var m0 = month + 12 * Math.floor((14 - month) / 12) - 2;
     var d0 = (day + x + Math.floor((31 * m0) / 12)) % 7;
-    var res = ["Sunday", "Monday", "Tuesday", "Wendsday", "Thursday", "Friday", "saturday"];
+    var res = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "saturday"];
     if (d0 <= res.length) 
     {
         console.log("Day is " + res[d0]);
     }
     else {
-        console.log("Invalid day ")
+        console.log("Invalid day ");
     }
 },
     payment(principle, year, rate) 
@@ -409,9 +409,25 @@ convertTemp(number)
     else{
         console.log("invalid value");
     }
-
 },
-
+    sqrt(num) 
+    {
+    if (num > 0) 
+    {
+        //formula 
+        var t = num;
+        var epsilon = 1e-15;
+        while (Math.abs(t - num / t) > epsilon * t) 
+        {
+            t = (num / t + t) / 2;
+        }
+        console.log("Squre root of non negative number is : ", t)
+    }
+    else 
+    {
+        console.log("Number should be positive ");
+    }
+},
 }
 
 
