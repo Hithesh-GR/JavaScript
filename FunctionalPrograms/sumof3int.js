@@ -2,9 +2,9 @@ var Utility=require('../utility/Utility');
  var readline=require('readline-sync');
 function triplets()
 {
-    var arr=[];
-    var a=Utility.inputArray(arr);
-    console.log(a);
-    Utility.tripple(a);
+    var array=[];
+    var arr=Utility.inputArray(array);
+    console.log(arr);
+    Utility.tripple(arr);
 }
-return triplets(); 
+triplets(); 

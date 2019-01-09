@@ -1,5 +1,5 @@
 var Utility=require('../utility/Utility');
- var readline=require('readline-sync');
+var readline=require('readline-sync');
 function gambler()
 {
     

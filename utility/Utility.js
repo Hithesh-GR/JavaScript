@@ -212,20 +212,206 @@ module.exports =
     },
     tripple(arr)
     {
-        for(var i=0;i<arr.length-2;i++)
-        for(var j=i+1;j<arr.length-1;j++)
-        for(var k=j+1;i<arr.length;k++)
-        if(arr[i]+arr[j]+arr[k]==0)
-        console.log("the sum of three integers"+arr[i] + " ,"+ arr[j] + " ,"+ arr[k]);
+        for (var i = 0; i < arr.length-2; i++) 
+        for (var j = i+1; j < arr.length-1; j++) 
+        for (var k = j+1; k < arr.length; k++) 
+        if (arr[i]+arr[j]+arr[k] == 0) 
+        { 
+           console.log("the sum of three integers" +arr[i]+" "+arr[j]+" "+arr[k]); 
+        } 
     },
-    inputArray(arr) 
+    inputArray(array) 
     {
         var number = readline.question("Enter total number of array elements");
         for (var i = 0; i < number; i++) 
         {
-            arr[i] = Number(readline.question(""));
+            array[i] = Number(readline.question(" "));
         }
-        return arr;
+        return array;
     },
+         
+    getAllPermutations(string) 
+    {
+        var results = [];
+        if (string.length == 1) 
+        {
+          results.push(string);
+          return results;
+        }
+          for (var i = 0; i < string.length; i++) 
+          {
+          var firstChar = string[i];
+          var charsLeft = string.substring(0, i) + string.substring(i + 1);
+          var innerPermutations = readline.question(charsLeft);
+          for (var j = 0; j < innerPermutations.length; j++) 
+          {
+            results.push(firstChar + innerPermutations[j]);
+          }
+        }
+        return results;
+    },
+    getCurrentTime()
+    {
+    var date = new Date();
+    var n = date.getSeconds();
+    return n;
+    },
+    elapsedTime(start, stop) 
+    {
+    var elapsed = (stop - start);
+    return elapsed;
+    },
+    isAnagram(string1, string2) 
+    {
+       string1=string1+"";
+       string2=string2+"";
+       if (string1.length != string2.length)
+        {
+            return false;
+        }
+          var arr = [];
+          for (let index = 0; index < 36; index++) 
+          {
+              arr[index] = 0;
+          }
+          for (let index = 0; index < string1.length; index++) 
+          {
+              var ch = string1.charAt(index);
+              if (ch >= 'a' && ch <= 'z') 
+              {
+                  var code = ch.charCodeAt(0);
+                   arr[code - 97]++;
+              } 
+              else if (ch >= 'A' && ch <= 'Z') 
+              {
+                  var code = ch.charCodeAt(0);
+                  arr[code - 65]++;
+              } 
+              else 
+              {
+                  var code = ch.charCodeAt(0);
+                  arr[code - 22]++;
+              }
+              ch = string2.charAt(index);
+              if (ch >= 'a' && ch <= 'z') 
+              {
+                  var code = ch.charCodeAt(0);
+                  arr[code - 97]--;
+              } 
+              else if (ch >= 'A' && ch <= 'Z') 
+              {
+                  var code = ch.charCodeAt(0);
+                  arr[code - 65]--;
+              } 
+              else 
+              {
+                var code = ch.charCodeAt(0);
+                arr[code - 22]--;
+              }
+        }
+        for (let index = 0; index < 36; index++) 
+        {
+            if (arr[index] != 0) 
+            {
+                return false;
+            }
+        }
+        return true;
+    },
+    palindrome(num) 
+    {
+        var temp = num;
+        var rem = 0, rev = 0;
+        //loop untill num is not equal to zero
+        while (num != 0) 
+        {
+        //take reminder of the number 
+        rem = num % 10;
+        //keep on adding element 
+        rev = rev * 10 + rem;
+        //devide the number to get next digit of given number  
+        num = Math.floor(num / 10);
+        }
+    // check both number are equal and return result
+    if (temp == rev) 
+    {
+        return true;
+    }
+    else {
+        return false;
+    }
+},
+   primeNum(res) 
+    {
+    for (let i = 2; i < res; i++) 
+    {
+        if (this.isPrime(i)) 
+        {
+            console.log(i); 
+        }
+    }
+},
+// method to check the prime numbers 
+isPrime(number) 
+{
+    if (number == 0 || number == 1) 
+    {
+        return false;
+    }
+    for (var i = 2; i< number; i++) 
+    {
+        if (number % i == 0) 
+        {
+            return false;
+        }
+    }
+    return true;
+},
+    dayOfWeek(day, month, year) 
+    {
+    var y0 = year - Math.floor((14 - month) / 12);
+    var x = y0 + Math.floor((y0 / 4)) - Math.floor((y0 / 100)) + Math.floor((y0 / 400));
+    m0 = month + 12 * Math.floor((14 - month) / 12) - 2;
+    var d0 = (day + x + Math.floor((31 * m0) / 12)) % 7;
+    var res = ["Sunday", "Monday", "Tuesday", "Wendsday", "Thursday", "Friday", "saturday"];
+    if (d0 <= res.length) 
+    {
+        console.log("Day is " + res[d0]);
+    }
+    else {
+        console.log("Invalid day ")
+    }
+},
+    payment(principle, year, rate) 
+    {
+    var R = rate / (12 * 100);
+    var n = 12 * year;
+    var rs = Math.pow((1 + R), (-n));
+    var calculation = (principle * R) / (1 - (rs));
+    console.log("Monthly payment " + calculation);
+},
+convertTemp(number)
+{
+    //Celsius to Fahrenheit
+    if (number == 1) 
+    {
+        var num = readline.question("Enter your celsius value :");
+        var fahrenheit = (num * 9 / 5) + 32;
+        console.log("Temperature in Fahrenheit: " + fahrenheit);
+    }
+    else if(number==2)
+    {
+        //Fahrenheit to Celsius
+        var num1 = readline.question("Enter your celsius value :");
+        var celsius = (num1 - 32) * 5 / 9;
+        console.log("Temperature in Celsius: " + celsius);
+    }
+    else{
+        console.log("invalid value");
+    }
+
+},
+
 }
+
 
