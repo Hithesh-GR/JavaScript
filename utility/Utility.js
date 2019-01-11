@@ -1,11 +1,29 @@
+/******************************************************************************
+ *  Execution       :   1. default node         cmd> node fileName.js                 
+ *  Purpose         : TO deploy all the business logic.
+ *  @file           : utility.js
+ *  @overview       : ALl the business logic bus be here.
+ *  @module         : read-line modules are installed
+ *  @author         : HITHESH G R
+ *  @version        : v8.15.0
+ *  @since          : 03-01-2019
+ ******************************************************************************/
+
 var readline = require('readline-sync');
+    /*
+    *@purpose : To get user input value 
+    *@description : call this method whenever we want take input from user
+                    and return the value.
+    */
 module.exports =
 {
+    //Functional Programs
      /*
-     * Purpose   : By ensuring username with minimum 3 characters,replacing USERNAME with userinput
+     * @Purpose   : By ensuring username with minimum 3 characters,replacing USERNAME with userinput
                   and print the string.
-     *  @descriptipn: Declaring the function and passing the userinput as argument.
-     *  @function: diplayname takes the userinput and print it with some sentence.
+     * @parameter  :a- user input value
+     * @descriptipn: Declaring the function and passing the userinput as argument.
+     * @function: diplayname takes the userinput and print it with some sentence.
      */
     replace(a) 
     {
@@ -29,13 +47,13 @@ module.exports =
     },
     /*
      * @purpose : By using random function flip the coin no of times from user input
-                  and print the percentage of head vs tails
+                  and print the percentage of head vs tails.
      * @description : Declaring a function and passing the userinput for fliping the coin
                       no of times
      * @function: flipcoin takes the no of times to flip coin and print the percentage of
                   head and tail
-     */
-    flipcoin(rn)
+    */
+    flipcoin()
     {
         var heads=0;
         var tails=0;
@@ -63,12 +81,12 @@ module.exports =
     },
     /*
      * @purpose : Taking input as a fourdigit number check whether the given number is a leap year
-                or not. 
+                  or not. 
      * @description : Declaring the function and passing a four digit number from userinput
      * @function:  Function compares the length of given number and prints the number 
                    is a leap year or not 
-     */
-    leap(year)
+    */
+    leap()
     {
          // ensure year is of four digit
         var year=0000;
@@ -92,10 +110,9 @@ module.exports =
     },
     /*
     *@purpose : generate the power of two values 
-    *@parameter  : user input value
     *@description : it prints the two's power value 
     */
-    power(pow)
+    power()
     {
         var pow=readline.question("enter power");
 		if(pow==0)
@@ -108,15 +125,15 @@ module.exports =
 			console.log(Math.pow(2, i));
         }
     },
-     /* 
+    /* 
      * @purpose : To genarate harmonic numbers according to the userinput
      * @parameter : input from user
      * @description : To generate the sum of harmonic numbers by taking input from user
      * @function : Harmonic function takes user input and sum it no of times that user given
-     */
-    Harmonic(num)
+    */
+    Harmonic()
     {
-     var num=readline.question("enter N th number");
+        var num=readline.question("enter N th number");
         var sum=0;
         // loop for generate the Nth Harmonic value
 		for(var i=1;i<=num;i++)
@@ -128,9 +145,9 @@ module.exports =
     },
     /* 
      * @purpose : To genarate primeFactor numbers according to the userinput
-      * @parameter : input from user
-     * @description : Finding the primefactors of a given number */
-    fact(number)
+     * @description : Finding the primefactors of a given number 
+    */
+    fact()
     {
         var number=readline.question("enter the number");
         for(var i=1;i<=number;i++)
@@ -234,13 +251,13 @@ module.exports =
           console.log(array[index]);
          }
     },
-      /*
-        *@purpose :to print Two Dimensional Array,from user input elements 
-        *@parameter  : row-number of rows 
-                        column-number of columns
-        *@description :ask user to enter total number of column and row
-        *convert into two Dimenstional array format and prints 
-        */
+    /*
+    *@purpose :to print Two Dimensional Array,from user input elements 
+    *@parameter  : row-number of rows 
+                   column-number of columns
+    *@description :ask user to enter total number of column and row
+    *convert into two Dimenstional array format and prints 
+    */
     twoDarry(row, col) 
     {
         var arr = [];
@@ -260,7 +277,7 @@ module.exports =
     /*
      * @purpose : to calculate the distance between two point
      * @description : use distance formula and calculate the result 
-     */
+    */
     dist()
     {
         // x -first distance
@@ -274,7 +291,7 @@ module.exports =
     * @purpose :to find the windchill, by using user input temperature and volume
     * @description :first check the input for temperture is in range 
                      and for the volume range, and prints the results
-     */
+    */
     wind()
     {
         //t-temperature from the user input
@@ -307,12 +324,12 @@ module.exports =
         console.log("1st root of the equation is "+root1);
 		console.log("2nd root of the equation is "+root2);
     },
-     /*
-      * @purpose :to find triplets from user input array elements
-      * @param   :array elements
-      * @description :if sum of 3 array elemets equals to zero its called triplet
+    /*
+    * @purpose :to find triplets from user input array elements
+    * @param   :array elements
+    * @description :if sum of 3 array elemets equals to zero its called triplet
                       prints the total triplets formed and also no of triplets 
-      */
+    */
     tripple(arr)
     {
         for (var i = 0; i < arr.length-2; i++) 
@@ -342,9 +359,9 @@ module.exports =
     /*
     *@purpose :to find the permutation of given string and prints all combination
     *@parameter  : string-empty
-                str-user input string 
-                first-first index
-                last-last index
+                   str-user input string 
+                   first-first index
+                   last-last index
     *@description :check all possible combination of stringuse recursion method to find possible
                    combination prints the all combination
     */
@@ -391,6 +408,7 @@ module.exports =
     var elapsed = (stop - start);
     return elapsed;
     },
+    //Algorithm Programs
     /*
      * @purpose : check the two strings are same or not
      * @parameter: string1-first string of user input 
@@ -491,7 +509,7 @@ module.exports =
         }
     },
     // method to check the prime numbers 
-   primeNum(res) 
+    primeNum(res) 
     {
     for (let i = 2; i < res; i++) 
     {
@@ -516,7 +534,6 @@ module.exports =
     }
     return true;
     },
-    //Algorithm Programs
     /*
     *@purpose : to find day falls on the given user input date format
     *@param   : day-take date from command line of user choice 
@@ -582,12 +599,12 @@ module.exports =
         console.log("invalid value");
     }
     },
-       /*
-        *@purpose :to find square root for non negative number by using the newton method 
-        *@parameter : num-user input value
-        *@description :take value from the user and calculate the square of that number 
-                        and prints the result.
-        */
+    /*
+    *@purpose :to find square root for non negative number by using the newton method 
+    *@parameter : num-user input value
+    *@description :take value from the user and calculate the square of that number 
+                    and prints the result.
+    */
     sqrt(num) 
     {
     if (num > 0) 
@@ -606,14 +623,14 @@ module.exports =
         console.log("Number should be positive ");
     }
     },
-        /*
-        *@purpose : is to dispence total minimum number of notes from vending machine 
-        *@param   : value-user inputed value
-                    I - zero
-                    TOTAL-zero
-        *@description : take a number from user and calculate minimum number of notes has to return 
+    /*
+    *@purpose : is to dispence total minimum number of notes from vending machine 
+    *@param   : value-user inputed value
+                I - zero
+                TOTAL-zero
+    *@description : take a number from user and calculate minimum number of notes has to return 
                         vending machine use recursion method,and return the value  
-        */
+    */
     vending(value,I,TOTAL)
     {
     		/*
@@ -799,9 +816,9 @@ module.exports =
     /*
     *@purpose : generate the binary search for given array
     *@parameter: res-array
-                low-initial value of array
-                high-final value of array
-                ele-elements wants to find in array
+                 low-initial value of array
+                 high-final value of array
+                 ele-elements wants to find in array
     *@description: take array, calculate the mid value,compare with elements,
                     use recursion method to search element  
      */
