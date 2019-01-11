@@ -1,3 +1,12 @@
+/******************************************************************************
+ *  @Purpose        : To find  elapsed time from current time.   
+ *  @file           : stopwatch.js
+ *  @overview       : To Write a Stopwatch Program for measuring the time that elapses between 
+                        the start and end clicks
+ *  @author         : HITHESH G R
+ *  @version        : v8.15.0
+ *  @since          : 03-01-2019
+ ******************************************************************************/
 var Utility=require('../utility/Utility');
 var readline=require('readline-sync');
 function stopWatch()

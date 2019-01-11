@@ -1,3 +1,7 @@
+/*
+*@purpose : generate the bubble sort array  for given array
+*@description: take array,arrange elements according size using bubble sort,and return the result
+*/
 var Utility=require('../utility/Utility');
 var readline=require('readline-sync');
 function bubblesort()

@@ -1,3 +1,8 @@
+/*
+* @purpose : check the two strings are same or not
+* @description : take two string from user and compare those, and prints the message 
+               wheather they are anagram or not.
+*/
 var Utility=require('../utility/Utility');
 var readline=require('readline-sync');
 function anagram()

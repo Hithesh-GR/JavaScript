@@ -1,3 +1,8 @@
+/*
+*@purpose : sort the array using the merge sort technique  
+*@description : take array,divide into two halves,and sort the elements for both 
+                right and left halves 
+*/
 var Utility=require('../utility/Utility');
 var readline=require('readline-sync');
 function mergesort()

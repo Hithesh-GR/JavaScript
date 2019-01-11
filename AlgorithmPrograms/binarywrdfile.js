@@ -1,3 +1,6 @@
+/*
+* @purpose: method take file values and strings
+*/
 var Utility=require('../utility/Utility');
 var readline=require('readline-sync');
 function binarysearchwrdfrmfile()

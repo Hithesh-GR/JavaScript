@@ -820,8 +820,8 @@ module.exports =
                  high-final value of array
                  ele-elements wants to find in array
     *@description: take array, calculate the mid value,compare with elements,
-                    use recursion method to search element  
-     */
+                   use recursion method to search element  
+    */
     binarySearch(res, low, high, ele) 
     {
         var mid;
@@ -842,7 +842,7 @@ module.exports =
             }
             else 
             {
-                //assign inremented mid to low
+                //assign incremented mid to low
                 low = mid + 1;
             }
         }
