@@ -356,6 +356,17 @@ module.exports =
         }
         return array;
     },
+    input() 
+    {
+    var readLine = require('readline');
+    var rl = readLine.createInterface({
+
+        input: process.stdin,
+        output: process.stdout
+    
+    });
+    return rl;
+    },
     /*
     *@purpose :to find the permutation of given string and prints all combination
     *@parameter  : string-empty
