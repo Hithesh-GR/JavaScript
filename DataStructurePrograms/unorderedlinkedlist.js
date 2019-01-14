@@ -12,30 +12,26 @@
  ******************************************************************************/
 var unorderedlist=require('../DataStructurePrograms/utility/unorderedlist');
 var Utility=require('../utility/Utility');
-var data = fs.readFileSync('file.txt');
-console.log("String read from file: "+data);
+var data = fileSystem.readFileSync('file.txt');
+console.log("String read from file: \n\n"+data);
 data= data.toString().toLocaleLowerCase().split(' ');
-function unorderedList()
-{
+function unorderedList(){
     /**
      * here we read the input from user that input function stored in utility.
      */
     var read=Utility.input();
-    read.question("Enter the element to search: ",
-    function(ele)
-    {
+    read.question("Enter the element to search: \n",
+    function(element){
         /**
          * Validating the element which should not accept any integer value.
          */
-        if(ele>='a'&&ele<='z'||ele>='A'&&ele<='Z')
-        {
-            unorderedlist.unorderedList(data,ele); 
+        if(element>='a' && element<='z'||element>='A' && element<='Z'){
+            unorderedlist.unorderedList(data,element); 
         }
-        else
-        {
-        console.log("plz enter a string...");
+        else{
+            console.log("plz enter a string...");
+        }
         read.close();
-        }
     });  
 }
 unorderedList();

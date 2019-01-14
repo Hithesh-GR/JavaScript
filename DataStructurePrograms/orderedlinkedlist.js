@@ -10,32 +10,28 @@
  *  @version        : v8.15.0
  *  @since          : 11-01-2019
  ******************************************************************************/
-var fs = require('fs');
+var fileSystem = require('fs');
 var Utility=require('../utility/Utility');
-var order=require('../DataStructurePrograms/utility/orderedlist');
-var data = fs.readFileSync('file1.txt');
+var ordered=require('../DataStructurePrograms/utility/orderedlist');
+var data = fileSystem.readFileSync('file1.txt');
 data= data.toString().split(' ');
-function orderedList()
-{ 
+function orderedList(){ 
     /**
     * here we read the input from user that input function stored in utility.
     */
     var read=Utility.input();
     read.question("Enter the element to be searched: ", 
-    function(num)
-    {
+    function(num){
         /**
          * Validating the element which should not accept any string value.
          */
-        if((num>='a' && num<='z')|| (num>='A' && num<='Z'))
-        {
-            console.log("plz enter integers only..");
+        if((num>='a' && num<='z')|| (num>='A' && num<='Z')){
+            console.log("please enter integers only..");
         }
-        else
-        {
-        order.orderedList(data,num);
+        else{
+            ordered.orderedList(data,num);
+        }
         read.close();
-        }
     });
 }
 orderedList();

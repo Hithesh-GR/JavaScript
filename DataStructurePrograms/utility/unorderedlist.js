@@ -16,22 +16,21 @@ class Node
     constructor(element) 
     {
         this.element = element;
-        this.next = null
+        this.next = null;
     }
 }
 /**
  * creating class linkedlist which will create new nodes and perform operation like 
  *  add,remove,insertAt,insertFrom.
  */
-class LinkedList 
+class linkedList 
 {
     constructor() 
     {
         this.head = null;
         this.size = 0;
     }
-    add(element) 
-    {
+    add(element) {
       /**
        * creating a new node
        */
@@ -41,118 +40,104 @@ class LinkedList
         var current;
         /**
          * if list is empty add an element and make it head. */
-        if (this.head == null)
+        if (this.head == null){
             this.head = node;
-        else 
-        {
+        }
+        else {
             current = this.head;
-            while (current.next) 
-            {
+            while (current.next) {
                 current = current.next;
             }   
             current.next = node;
         }
         this.size++;
     }
-    insertAt(element, index) 
-    {
-        if (index > 0 && index > this.size)
+    insertAt(element, index) {
+        if (index > 0 && index > this.size){
             return false;
-        else 
-        {    
+        }
+        else {    
             var node = new Node(element);
-            var curr, prev;
-            curr = this.head;
+            var current, previous;
+            current = this.head;
             /**
              * add element to first index */
-            if (index == 0) 
-            {
+            if (index == 0) {
                 node.next = head;
                 this.head = node;
             }
-            else 
-            {
-                curr = this.head;
-                var it = 0; 
-                while (it < index) 
-                {
-                    it++;
-                    prev = curr;
-                    curr = curr.next;
+            else {
+                current = this.head;
+                var iteration = 0; 
+                while (iteration < index) {
+                    iteration++;
+                    previous = current;
+                    current = current.next;
                 }
                 /** adding an element */ 
-                node.next = curr;
-                prev.next = node;
+                node.next = current;
+                previous.next = node;
             }
             this.size++;
         }
     }
-    removeFrom(index) 
-    {
+    removeFrom(index) {
         /**
          * remove element from given index  */
-        if (index > 0 && index > this.size)
+        if (index > 0 && index > this.size){
             return -1;
-        else 
-        {
-            var curr, prev, it = 0;
-            curr = this.head;
-            prev = curr;
+        }
+        else {
+            var current, previous, iteration = 0;
+            current = this.head;
+            previous = curr;
 
             /** deleting first element */ 
-            if (index === 0) 
-            {
-                this.head = curr.next;
+            if (index === 0) {
+                this.head = current.next;
             }
-            else 
-            {
-                while (it < index) 
-                {
-                    it++;
-                    prev = curr;
-                    curr = curr.next;
+            else {
+                while (iteration < index) {
+                    iteration++;
+                    previous = current;
+                    current = current.next;
                 }
                 /** 
                  * remove the element */ 
-                prev.next = curr.next;
+                previous.next = current.next;
             }
             this.size--;
             /**
              *  return the remove element */
-            return curr.element;
+            return current.element;
         }
     }
-    removeElement(element) 
-    {
+    removeElement(element) {
         var current = this.head;
-        var prev = null;
-        while (current != null) 
-        {
-            if (current.element === element) 
-            {
-                if (prev == null) 
-                {
+        var previous = null;
+        while (current != null) {
+            if (current.element === element) {
+                if (previous == null) {
                     this.head = current.next;
-                } else 
-                {
-                    prev.next = current.next;
+                } 
+                else {
+                    previous.next = current.next;
                 }
                 this.size--;
                 return current.element;
             }
-            prev = current;
+            previous = current;
             current = current.next;
         }
         return -1;
     }
-    indexOf(element) 
-    {
+    indexOf(element) {
         var count = 0;
         var current = this.head;
-        while (current != null) 
-        {      
-            if (current.element === element)
+        while (current != null) {      
+            if (current.element === element){
                 return count;
+            }
             count++;
             current = current.next;
         }
@@ -160,70 +145,60 @@ class LinkedList
         *  not found */
         return -1;
     }
-    isEmpty() 
-    {
+    isEmpty() {
         return this.size == 0;
     }
-    size_of_list() 
-    {
+    sizeOflist() {
         //console.log(this.size);
         return this.size;
     }
-    printList() 
-    {
+    printList() {
         /**
          * print the given list after performing changes.
          */
-        var curr = this.head;
-        var str = "";
-        while (curr) 
-        {
-            str += curr.element+" ";
-            curr = curr.next;
+        var current = this.head;
+        var string = "";
+        while (current) {
+            string += current.element+" ";
+            current = current.next;
         }
-        console.log(str);
-        return str;
+        console.log(string);
+        return string;
     }
-    GetNth(index) 
-    {       
+    getNth(index) {       
         var  current = this.head; 
         var count = 0; 
-        while (current != null) 
-        { 
-            if (count == index) 
+        while (current != null) { 
+            if (count == index) {
                 return current.element; 
-            count++; 
-            current = current.next; 
+                count++; 
+                current = current.next; 
+            }
         } 
         return 0; 
     }
 }
-fs = require('fs');
-    module.exports = 
-    {
-    unorderedList(arr, ele) 
-    {
-        var l = new LinkedList();
-        for (var i = 0; i < arr.length; i++) 
-        {
-            l.add(arr[i]);
+fileSystem = require('fs');
+module.exports = {
+    unorderedList(array, element) {
+        var l = new linkedList();
+        for (var i = 0; i < array.length; i++) {
+            l.add(array[i]);
         }  
-        if (l.indexOf(ele) == -1) 
-        {
-            l.add(ele);
-            l.printList();
-            console.log("added successfully..")
+        if (l.indexOf(element) == -1) {
+            l.add(element);
+            //l.printList();
+            console.log("added successfully..\n");
         }
-        else 
-        {
-            l.removeElement(ele);
-            l.printList();
-            console.log("Removed successfully....")
+        else {
+            l.removeElement(element);
+            //l.printList();
+            console.log("Removed successfully....\n");
         }  
         /**
          * write operation to save updated list into the file.
          */
-        var datawrite=l.printList();
-        fs.writeFileSync("/home/admin1/HitheshGR/DataStructurePrograms/file.txt",datawrite); 
-},
+        var dataWrite=l.printList();
+        fileSystem.writeFileSync("/home/admin1/HitheshGR/DataStructurePrograms/file.txt",dataWrite); 
+    }
 }

@@ -11,13 +11,11 @@
 /*
 * creating node function to create any new node with null values.
  */
-function Node(element) 
-{ 
+function Node(element) { 
     this.element = element; 
     this.next = null; 
 } 
-function linkedList()
-{ 
+function linkedList(){ 
     /**
      * refernces for each function used in linked list operations.
      */
@@ -30,25 +28,22 @@ function linkedList()
     this.remove = remove;
     this.search=search;
     this.size=size;
-    this.getval=getval;
-    this.num_getval=num_getval;
-    this.search_num=search_num;
-    this.insert_pos=insert_pos;
+    this.getValue=getValue;
+    this.numGetvalue=numGetvalue;
+    this.searchNumber=searchNumber;
+    this.insertPosition=insertPosition;
 } 
-function find(item) 
-{ 
+function find(item) { 
     /**
      * find each item if available.
      */
-    var currNode = this.head; 
-    while (currNode.element != item ) 
-    { 
-        currNode = currNode.next; 
+    var currentNode = this.head; 
+    while (currentNode.element != item ) { 
+        currentNode = currentNode.next; 
     } 
-    return currNode;
+    return currentNode;
 } 
-function insert(newElement, item) 
-{
+function insert(newElement, item) {
     /**
      * creating a new node-Node. */ 
     var newNode = new Node(newElement); 
@@ -56,163 +51,136 @@ function insert(newElement, item)
     newNode.next = current.next; 
     current.next = newNode; 
 }
-function display() 
-{ 
+function display() { 
     /**
      * display the updated string of integer. */
-    var currNode = this.head; 
-    while (!(currNode.next == null)) 
-    {
-        console.log(currNode.next.element); 
-        currNode = currNode.next; 
+    var currentNode = this.head; 
+    while (!(currentNode.next == null)) {
+        console.log(currentNode.next.element); 
+        currentNode = currentNode.next; 
     } 
 } 
-function findPrevious(item) 
-{ 
-    var currNode = this.head; 
-    while (!(currNode.next == null) && (currNode.next.element != item)) 
-    { 
-        currNode = currNode.next; 
+function findPrevious(item) { 
+    var currentNode = this.head; 
+    while (!(currentNode.next == null) && (currentNode.next.element != item)) { 
+        currentNode = currentNode.next; 
     } 
-    return currNode; 
+    return currentNode; 
 } 
-function remove(item) 
-{ 
-    var prevNode = this.findPrevious(item); 
-    if(!(prevNode.next == null)) 
-    { 
-        prevNode.next = prevNode.next.next; 
+function remove(item) { 
+    var previousNode = this.findPrevious(item); 
+    if(!(previousNode.next == null)) { 
+        previousNode.next = previousNode.next.next; 
     } 
 }
-function search(val)
-{ 
+function search(values){ 
     /**
      * search element from list and print it. 
      */
     var temp=this.head
-    while(temp.element!=val && temp.next !=null)
-    {
+    while(temp.element!=values && temp.next !=null){
         temp=temp.next;
     }
         console.log('element is'+temp.element)
-    if(temp.element===val)
-    {
+    if(temp.element===values){
         return true; 
     }
-    else 
-    {
+    else {
         return false;
     }
 }
-function size()
-{
+function size(){
     var temp=this.head;
     var count=0;
-    while(temp.next!=null)
-    {
+    while(temp.next!=null){
         temp=temp.next
         count++;
     }
     return count;
 }
-function getval()
-{
+function getValue(){
     var temp=this.head;
     var a='';
-    while (!(temp.next == null))
-    {        
+    while (!(temp.next == null)){        
         temp=temp.next;
         a=a+temp.element;
         a=a+' '     
     }
 return a;
 }
-function num_getval()
-{
+function numGetvalue(){
     var temp=this.head;
     var a='';
-    while(!(temp.next==null))
-    {
+    while(!(temp.next==null)){
         temp=temp.next;
         a=a+temp.element
         a=a+' '
     }
 return a;
 }
- function search_num(val)
-{
+function searchNumber(values){
     var temp=this.head
-    while((temp.element)!== val && temp.next !== null)
-    {
+    while((temp.element)!== values && temp.next !== null){
         temp=temp.next;   
     }
-    if((temp.element)==val)
-    {
+    if((temp.element)==values){
         return true;
     }
-    else 
-    {
+    else {
         return false;
     }
 }
-function insert_pos(val)
-{ 
+function insertPosition(values){ 
     /**
      * insert at specific position.
      */
-    var newNode = new Node(val)  
-    var curr=this.head.next;
+    var newNode = new Node(values)  
+    var current=this.head.next;
     var temp=this.head;
-    while(curr!=null&&(curr.element)<newNode.element)
-    {  
-        temp=curr;
-        curr=curr.next;
+    while(current!=null&&(current.element)<newNode.element){  
+        temp=current;
+        current=current.next;
     }
-    newNode.next=curr;
+    newNode.next=current;
     temp.next=newNode;
 }
-module.exports=
-{
-    orderedList: function (data,num) 
-    {
+module.exports={
+    orderedList: function (data,num) {
         /**
          * open file */
-        var fs = require('fs'); 
+        var fileSystem = require('fs'); 
         var arr1 = []
-        for (var i = 0; i < data.length; i++) 
-        {
+        for (var i = 0; i < data.length; i++) {
             var a = data[i]
             arr1.push(a);
         }
-        arr1 = arr1.sort(function (a, b) 
-        {
+        arr1 = arr1.sort(function (a, b) {
             return a - b;
         });
         var l = new linkedList();
         l.insert(arr1[0],'head')
-        for (var i = 1; i < arr1.length; i++) 
-        {
+        for (var i = 1; i < arr1.length; i++) {
             l.insert(arr1[i], arr1[i - 1])
         }
         l.display()
-        var bool = l.search_num(num)
-        if (bool) 
-        {
+        var bool = l.searchNumber(num)
+        if (bool) {
             console.log('deleting....');
             l.remove(num);
-            var a = l.num_getval();
+            var a = l.numGetvalue();
             console.log(a);
-            fs.writeFileSync('file1.txt', a.trim())
+            fileSystem.writeFileSync('file1.txt', a.trim())
             console.log('deleted sucessfully..')
             process.exit();
         }
-        else
-        console.log('adding....');
-        l.insert_pos(num);
-        var a = l.num_getval();
-        console.log(a)
-        fs.writeFileSync('file1.txt', a.trim());
-        console.log('added sucessfully');
-        process.exit();
+        else {
+            console.log('adding....');
+            l.insertPosition(num);
+            var a = l.numGetvalue();
+            console.log(a)
+            fileSystem.writeFileSync('file1.txt', a.trim());
+            console.log('added sucessfully');
+            process.exit();
+        }
     }
 }
