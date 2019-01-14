@@ -11,11 +11,13 @@
 /*
 * creating node function to create any new node with null values.
  */
-function Node(element) { 
+function Node(element) 
+{ 
     this.element = element; 
     this.next = null; 
 } 
-function LinkedList(){ 
+function linkedList()
+{ 
     /**
      * refernces for each function used in linked list operations.
      */
@@ -33,17 +35,20 @@ function LinkedList(){
     this.search_num=search_num;
     this.insert_pos=insert_pos;
 } 
-function find(item) { 
+function find(item) 
+{ 
     /**
      * find each item if available.
      */
     var currNode = this.head; 
-    while (currNode.element != item ) { 
+    while (currNode.element != item ) 
+    { 
         currNode = currNode.next; 
     } 
     return currNode;
 } 
-function insert(newElement, item) {
+function insert(newElement, item) 
+{
     /**
      * creating a new node-Node. */ 
     var newNode = new Node(newElement); 
@@ -51,25 +56,31 @@ function insert(newElement, item) {
     newNode.next = current.next; 
     current.next = newNode; 
 }
-function display() { 
+function display() 
+{ 
     /**
      * display the updated string of integer. */
     var currNode = this.head; 
-    while (!(currNode.next == null)) {
+    while (!(currNode.next == null)) 
+    {
         console.log(currNode.next.element); 
         currNode = currNode.next; 
     } 
 } 
-function findPrevious(item) { 
+function findPrevious(item) 
+{ 
     var currNode = this.head; 
-    while (!(currNode.next == null) && (currNode.next.element != item)) { 
+    while (!(currNode.next == null) && (currNode.next.element != item)) 
+    { 
         currNode = currNode.next; 
     } 
     return currNode; 
 } 
-function remove(item) { 
+function remove(item) 
+{ 
     var prevNode = this.findPrevious(item); 
-    if(!(prevNode.next == null)) { 
+    if(!(prevNode.next == null)) 
+    { 
         prevNode.next = prevNode.next.next; 
     } 
 }
@@ -83,13 +94,15 @@ function search(val)
     {
         temp=temp.next;
     }
-  console.log('element is'+temp.element)
+        console.log('element is'+temp.element)
     if(temp.element===val)
     {
-        return true; }
+        return true; 
+    }
     else 
     {
-        return false; }
+        return false;
+    }
 }
 function size()
 {
@@ -125,14 +138,14 @@ function num_getval()
         a=a+' '
     }
 return a;
- }
+}
  function search_num(val)
 {
     var temp=this.head
     while((temp.element)!== val && temp.next !== null)
-{
+    {
         temp=temp.next;   
-}
+    }
     if((temp.element)==val)
     {
         return true;
@@ -158,27 +171,34 @@ function insert_pos(val)
     newNode.next=curr;
     temp.next=newNode;
 }
-module.exports={
-    orderedList: function (data,num) {
+module.exports=
+{
+    orderedList: function (data,num) 
+    {
         /**
          * open file */
         var fs = require('fs'); 
         var arr1 = []
-        for (var i = 0; i < data.length; i++) {
+        for (var i = 0; i < data.length; i++) 
+        {
             var a = data[i]
             arr1.push(a);
         }
-        arr1 = arr1.sort(function (a, b) {
+        arr1 = arr1.sort(function (a, b) 
+        {
             return a - b;
         });
-        var l = new LinkedList();
+        var l = new linkedList();
         l.insert(arr1[0],'head')
-        for (var i = 1; i < arr1.length; i++) {
+        for (var i = 1; i < arr1.length; i++) 
+        {
             l.insert(arr1[i], arr1[i - 1])
         }
         l.display()
         var bool = l.search_num(num)
-        if (bool) {
+        if (bool) 
+        {
+            console.log('deleting....');
             l.remove(num);
             var a = l.num_getval();
             console.log(a);
@@ -187,12 +207,12 @@ module.exports={
             process.exit();
         }
         else
-        console.log('adding....')
+        console.log('adding....');
         l.insert_pos(num);
         var a = l.num_getval();
         console.log(a)
-        fs.writeFileSync('file1.txt', a.trim())
-        console.log('added sucessfully')
+        fs.writeFileSync('file1.txt', a.trim());
+        console.log('added sucessfully');
         process.exit();
     }
 }

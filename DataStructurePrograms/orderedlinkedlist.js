@@ -13,10 +13,9 @@
 var fs = require('fs');
 var Utility=require('../utility/Utility');
 var order=require('../DataStructurePrograms/utility/orderedlist');
-var data = fs.readFileSync('test1.txt');
+var data = fs.readFileSync('file1.txt');
 data= data.toString().split(' ');
-
-function orderedlinkList()
+function orderedList()
 { 
     /**
     * here we read the input from user that input function stored in utility.
@@ -30,11 +29,13 @@ function orderedlinkList()
          */
         if((num>='a' && num<='z')|| (num>='A' && num<='Z'))
         {
-            console.log("plz enter integers only..")
+            console.log("plz enter integers only..");
         }
         else
+        {
         order.orderedList(data,num);
         read.close();
+        }
     });
 }
-orderedlinkList();
+orderedList();

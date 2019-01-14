@@ -12,11 +12,10 @@
  ******************************************************************************/
 var unorderedlist=require('../DataStructurePrograms/utility/unorderedlist');
 var Utility=require('../utility/Utility');
-
 var data = fs.readFileSync('file.txt');
 console.log("String read from file: "+data);
 data= data.toString().toLocaleLowerCase().split(' ');
-function unorderedlinkList()
+function unorderedList()
 {
     /**
      * here we read the input from user that input function stored in utility.
@@ -33,10 +32,10 @@ function unorderedlinkList()
             unorderedlist.unorderedList(data,ele); 
         }
         else
+        {
         console.log("plz enter a string...");
         read.close();
-    } 
-    );  
-    
+        }
+    });  
 }
-unorderedlinkList();
+unorderedList();
