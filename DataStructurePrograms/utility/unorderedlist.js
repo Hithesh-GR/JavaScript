@@ -1,11 +1,9 @@
 /******************************************************************************
- *  @Purpose        : Read the Text from a file, split it into words and arrange it as Linked List.
-                     Take a user input to search a Word in the List. If the Word is not found then add it
-                     to the list, and if it found then remove the word from the List. In the end save the
-                     list into a file.      
+ *  Execution       :   1. default node         cmd> node fileName.js                 
+ *  Purpose         : TO deploy all the business logic.
  *  @file           : unorderedlist.js
- *  @overview       : We read a string from file then perform linked list operations and then we search 
-                      elements from list if it is available then delete and if not available then add it.      
+ *  @overview       : ALl the business logic bus be here.
+ *  @module         : read-line modules are installed
  *  @author         : HITHESH G R
  *  @version        : v8.15.0
  *  @since          : 11-01-2019
@@ -13,8 +11,10 @@
 /**
  * creating a class node to create any new node with null values.
  */
-class Node {
-    constructor(element) {
+class Node 
+{
+    constructor(element) 
+    {
         this.element = element;
         this.next = null
     }
@@ -23,12 +23,15 @@ class Node {
  * creating class linkedlist which will create new nodes and perform operation like 
  *  add,remove,insertAt,insertFrom.
  */
-class LinkedList {
-    constructor() {
+class LinkedList 
+{
+    constructor() 
+    {
         this.head = null;
         this.size = 0;
     }
-    add(element) {
+    add(element) 
+    {
       /**
        * creating a new node
        */
@@ -40,32 +43,39 @@ class LinkedList {
          * if list is empty add an element and make it head. */
         if (this.head == null)
             this.head = node;
-        else {
+        else 
+        {
             current = this.head;
-            while (current.next) {
+            while (current.next) 
+            {
                 current = current.next;
             }   
             current.next = node;
         }
         this.size++;
     }
-    insertAt(element, index) {
+    insertAt(element, index) 
+    {
         if (index > 0 && index > this.size)
             return false;
-        else {    
+        else 
+        {    
             var node = new Node(element);
             var curr, prev;
             curr = this.head;
             /**
              * add element to first index */
-            if (index == 0) {
+            if (index == 0) 
+            {
                 node.next = head;
                 this.head = node;
             }
-            else {
+            else 
+            {
                 curr = this.head;
                 var it = 0; 
-                while (it < index) {
+                while (it < index) 
+                {
                     it++;
                     prev = curr;
                     curr = curr.next;
@@ -77,22 +87,27 @@ class LinkedList {
             this.size++;
         }
     }
-    removeFrom(index) {
+    removeFrom(index) 
+    {
         /**
          * remove element from given index  */
         if (index > 0 && index > this.size)
             return -1;
-        else {
+        else 
+        {
             var curr, prev, it = 0;
             curr = this.head;
             prev = curr;
 
             /** deleting first element */ 
-            if (index === 0) {
+            if (index === 0) 
+            {
                 this.head = curr.next;
             }
-            else {
-                while (it < index) {
+            else 
+            {
+                while (it < index) 
+                {
                     it++;
                     prev = curr;
                     curr = curr.next;
@@ -107,14 +122,19 @@ class LinkedList {
             return curr.element;
         }
     }
-    removeElement(element) {
+    removeElement(element) 
+    {
         var current = this.head;
         var prev = null;
-        while (current != null) {
-            if (current.element === element) {
-                if (prev == null) {
+        while (current != null) 
+        {
+            if (current.element === element) 
+            {
+                if (prev == null) 
+                {
                     this.head = current.next;
-                } else {
+                } else 
+                {
                     prev.next = current.next;
                 }
                 this.size--;
@@ -125,10 +145,12 @@ class LinkedList {
         }
         return -1;
     }
-    indexOf(element) {
+    indexOf(element) 
+    {
         var count = 0;
         var current = this.head;
-        while (current != null) {      
+        while (current != null) 
+        {      
             if (current.element === element)
                 return count;
             count++;
@@ -138,20 +160,24 @@ class LinkedList {
         *  not found */
         return -1;
     }
-    isEmpty() {
+    isEmpty() 
+    {
         return this.size == 0;
     }
-    size_of_list() {
-        console.log(this.size);
+    size_of_list() 
+    {
+        //console.log(this.size);
+        return this.size;
     }
-
-    printList() {
+    printList() 
+    {
         /**
          * print the given list after performing changes.
          */
         var curr = this.head;
         var str = "";
-        while (curr) {
+        while (curr) 
+        {
             str += curr.element+" ";
             curr = curr.next;
         }
@@ -173,18 +199,23 @@ class LinkedList {
     }
 }
 fs = require('fs');
-    module.exports = {
-    unorderedList(arr, ele) {
+    module.exports = 
+    {
+    unorderedList(arr, ele) 
+    {
         var l = new LinkedList();
-        for (var i = 0; i < arr.length; i++) {
+        for (var i = 0; i < arr.length; i++) 
+        {
             l.add(arr[i]);
         }  
-        if (l.indexOf(ele) == -1) {
+        if (l.indexOf(ele) == -1) 
+        {
             l.add(ele);
             l.printList();
             console.log("added successfully..")
         }
-        else {
+        else 
+        {
             l.removeElement(ele);
             l.printList();
             console.log("Removed successfully....")
@@ -193,7 +224,6 @@ fs = require('fs');
          * write operation to save updated list into the file.
          */
         var datawrite=l.printList();
-        fs.writeFileSync("/home/admin1/HitheshGR/DataStructurePrograms/test1.txt",datawrite); 
+        fs.writeFileSync("/home/admin1/HitheshGR/DataStructurePrograms/file.txt",datawrite); 
 },
-
 }
