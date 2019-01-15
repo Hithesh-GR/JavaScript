@@ -17,7 +17,7 @@ function Node(element) {
 } 
 function linkedList(){ 
     /**
-     * refernces for each function used in linked list operations.
+     * refernces for each function used in linkedlist operations.
      */
     this.head = new Node("head"); 
     this.find = find; 
@@ -29,7 +29,6 @@ function linkedList(){
     this.search=search;
     this.size=size;
     this.getValue=getValue;
-    this.numGetvalue=numGetvalue;
     this.searchNumber=searchNumber;
     this.insertPosition=insertPosition;
 } 
@@ -43,9 +42,13 @@ function find(item) {
     } 
     return currentNode;
 } 
+/*
+* insert an item into the file
+*/
 function insert(newElement, item) {
     /**
-     * creating a new node-Node. */ 
+     * creating a new node-Node. 
+     **/ 
     var newNode = new Node(newElement); 
     var current = this.find(item); 
     newNode.next = current.next; 
@@ -53,7 +56,8 @@ function insert(newElement, item) {
 }
 function display() { 
     /**
-     * display the updated string of integer. */
+     * display the updated string of integer. 
+     **/
     var currentNode = this.head; 
     while (!(currentNode.next == null)) {
         console.log(currentNode.next.element); 
@@ -61,6 +65,9 @@ function display() {
     } 
 } 
 function findPrevious(item) { 
+    /**
+     * find the previous item. 
+     **/
     var currentNode = this.head; 
     while (!(currentNode.next == null) && (currentNode.next.element != item)) { 
         currentNode = currentNode.next; 
@@ -68,6 +75,9 @@ function findPrevious(item) {
     return currentNode; 
 } 
 function remove(item) { 
+    /**
+     * remove the item from file. 
+     **/
     var previousNode = this.findPrevious(item); 
     if(!(previousNode.next == null)) { 
         previousNode.next = previousNode.next.next; 
@@ -75,13 +85,13 @@ function remove(item) {
 }
 function search(values){ 
     /**
-     * search element from list and print it. 
+     * search item from the list and print it. 
      */
     var temp=this.head
     while(temp.element!=values && temp.next !=null){
         temp=temp.next;
     }
-        console.log('element is'+temp.element)
+        console.log('element is\n'+temp.element)
     if(temp.element===values){
         return true; 
     }
@@ -90,6 +100,9 @@ function search(values){
     }
 }
 function size(){
+    /**
+     * checks the size of integers from file 
+     **/
     var temp=this.head;
     var count=0;
     while(temp.next!=null){
@@ -99,6 +112,9 @@ function size(){
     return count;
 }
 function getValue(){
+    /**
+     * returns the item value. 
+     **/
     var temp=this.head;
     var a='';
     while (!(temp.next == null)){        
@@ -108,17 +124,10 @@ function getValue(){
     }
 return a;
 }
-function numGetvalue(){
-    var temp=this.head;
-    var a='';
-    while(!(temp.next==null)){
-        temp=temp.next;
-        a=a+temp.element
-        a=a+' '
-    }
-return a;
-}
 function searchNumber(values){
+    /**
+     * searching the number of item. 
+     **/
     var temp=this.head
     while((temp.element)!== values && temp.next !== null){
         temp=temp.next;   
@@ -144,39 +153,52 @@ function insertPosition(values){
     newNode.next=current;
     temp.next=newNode;
 }
+/**
+ * exports if a object that get exposed to a module and it is by default in every js file.
+ */
 module.exports={
     orderedList: function (data,num) {
         /**
-         * open file */
+         * open file 
+         **/
         var fileSystem = require('fs'); 
-        var arr1 = []
+        var array = []
         for (var i = 0; i < data.length; i++) {
             var a = data[i]
-            arr1.push(a);
+            array.push(a);
         }
-        arr1 = arr1.sort(function (a, b) {
+        array = array.sort(function (a, b) {
             return a - b;
         });
-        var l = new linkedList();
-        l.insert(arr1[0],'head')
-        for (var i = 1; i < arr1.length; i++) {
-            l.insert(arr1[i], arr1[i - 1])
+        /*
+        * create a new list
+        */
+        var list = new linkedList();
+        list.insert(array[0],'head')
+        for (var i = 1; i < array.length; i++) {
+            list.insert(array[i], array[i - 1])
         }
-        l.display()
-        var bool = l.searchNumber(num)
+        list.display();
+        var bool = list.searchNumber(num)
         if (bool) {
+            /*
+            * This condition checks for deleting the item,if item already exists in file
+            */
             console.log('deleting....');
-            l.remove(num);
-            var a = l.numGetvalue();
+            list.remove(num);
+            var a = list.getValue();
             console.log(a);
             fileSystem.writeFileSync('file1.txt', a.trim())
             console.log('deleted sucessfully..')
             process.exit();
         }
         else {
+            /*
+            * This condition checks for adding the item,if item not exists in file
+            */
             console.log('adding....');
-            l.insertPosition(num);
-            var a = l.numGetvalue();
+            list.insertPosition(num);
+            var a = list.getValue();
             console.log(a)
             fileSystem.writeFileSync('file1.txt', a.trim());
             console.log('added sucessfully');

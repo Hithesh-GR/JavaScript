@@ -1,7 +1,7 @@
 /******************************************************************************
  *  Execution       :   1. default node         cmd> node fileName.js                 
  *  Purpose         : TO deploy all the business logic.
- *  @file           : SBP.js
+ *  @file           : SBPStack.js
  *  @overview       : ALl the business logic bus be here.
  *  @module         : read-line modules are installed
  *  @author         : HITHESH G R
@@ -21,6 +21,9 @@ class Stack{
     push(element){
         this.items.push(element);
     }
+    /**
+     * pop elements from the stack.
+     */
     pop(){
         /**
          * if there is no element in stack and we perform pop then it get underflow.
@@ -36,11 +39,15 @@ class Stack{
         return this.items[this.items.length-1];
     }
     isEmpty(){
+        /*
+        * checks if stack is empty are not
+        */
         return this.items.length==0;
     }
     printStack(){
         /**
-         * print stack */
+         * print stack 
+         */
         var str="";
         for(var i=0;i<this.items.length;i++){
             str+=this.items[i]+"";
@@ -49,34 +56,37 @@ class Stack{
     }
 }
 /**
- * exports is a object that get exposed to a module and it is by default in every js file.
+ * exports if a object that get exposed to a module and it is by default in every js file.
  */
 module.exports={
     balancedParenthesis(expression){
         /**
-         * create a new stack. */
+         * create a new stack. 
+         **/
         var stack=new Stack();
         var count=0;
         var counter=0;
         for(var i=0;i<expression.length;i++){
             /**
-             * if parantheses opens we will perform push operation. */
+             * if paranthesis opens it will perform push operation. 
+            **/
             if(expression[i]=="("){
                 stack.push(expression[i]);
                 count++;
             }
             /**
-             * while closing parantheses we will perform pop opeartion. */
+             * while closing paranthesis it will perform pop opeartion. 
+            **/
             else if(expression[i]==")"){
                 stack.pop();
                 counter++;
             }
         }
         if(count==counter){
-            console.log("True"+"\n"+"This arithmetic expression is balanced");
+            console.log("True"+"\n"+"Arithmetic expression is balanced");
         }
         else{
-            console.log("False"+"\n"+"The arithmetic expression is not balanced");
+            console.log("False"+"\n"+"Arithmetic expression is not balanced");
         }
     }
 }

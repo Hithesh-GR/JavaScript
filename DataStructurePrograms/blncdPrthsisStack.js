@@ -1,10 +1,10 @@
 var Utility=require('../utility/Utility');
-var simpleBP=require('../DataStructurePrograms/utility/SBP.js');
+var simpleBP=require('../DataStructurePrograms/utility/SBPStack.js');
 /******************************************************************************
  *  @Purpose        : Take an Arithmetic Expression such that parentheses are used 
                       to order the performance of operations.Ensure parentheses must 
                       appear in a balanced fashion.    
- *  @file           : balancedPrnthsis.js
+ *  @file           : blncdPrthsisStack.js
  *  @overview       : We will take an expression then if the brace opens we will push 
                       elements using stack and while closeing we will pop the elements 
                       then will check if the parantheses is balanced or not and return 
@@ -13,7 +13,7 @@ var simpleBP=require('../DataStructurePrograms/utility/SBP.js');
  *  @version        : v8.15.0
  *  @since          : 11-01-2019
  ******************************************************************************/
-function simpleBalancedparenthesis()
+function balancedParenthesis()
 {
     var read=Utility.input();
     read.question("Enter an expression:",function(expression){
@@ -29,4 +29,4 @@ function simpleBalancedparenthesis()
         read.close();
     }); 
 }
-simpleBalancedparenthesis();
+balancedParenthesis();

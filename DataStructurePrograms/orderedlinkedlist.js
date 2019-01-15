@@ -14,6 +14,7 @@ var fileSystem = require('fs');
 var Utility=require('../utility/Utility');
 var ordered=require('../DataStructurePrograms/utility/orderedlist');
 var data = fileSystem.readFileSync('file1.txt');
+console.log("String read from file: \n\n"+data);
 data= data.toString().split(' ');
 function orderedList(){ 
     /**

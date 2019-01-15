@@ -11,22 +11,18 @@
 /**
  * creating a class node to create any new node with null values.
  */
-class Node 
-{
-    constructor(element) 
-    {
+class Node {
+    constructor(element) {
         this.element = element;
         this.next = null;
     }
 }
 /**
- * creating class linkedlist which will create new nodes and perform operation like 
+ *  creating class linkedlist which will create new nodes and perform operation like 
  *  add,remove,insertAt,insertFrom.
  */
-class linkedList 
-{
-    constructor() 
-    {
+class linkedList {
+    constructor() {
         this.head = null;
         this.size = 0;
     }
@@ -36,10 +32,12 @@ class linkedList
        */
         var node = new Node(element);
         /**
-         * to store current node */
+         * to store current node 
+         **/
         var current;
         /**
-         * if list is empty add an element and make it head. */
+         * if list is empty add an element and make it head. 
+         **/
         if (this.head == null){
             this.head = node;
         }
@@ -52,6 +50,9 @@ class linkedList
         }
         this.size++;
     }
+    /*
+    * insert the string into file
+    */
     insertAt(element, index) {
         if (index > 0 && index > this.size){
             return false;
@@ -61,7 +62,8 @@ class linkedList
             var current, previous;
             current = this.head;
             /**
-             * add element to first index */
+             * add element to first index 
+             **/
             if (index == 0) {
                 node.next = head;
                 this.head = node;
@@ -74,16 +76,22 @@ class linkedList
                     previous = current;
                     current = current.next;
                 }
-                /** adding an element */ 
+                /** 
+                 * adding an element 
+                 **/ 
                 node.next = current;
                 previous.next = node;
             }
             this.size++;
         }
     }
+    /*
+    * remove the item from file
+    */
     removeFrom(index) {
         /**
-         * remove element from given index  */
+         * remove element from given index  
+         **/
         if (index > 0 && index > this.size){
             return -1;
         }
@@ -91,8 +99,9 @@ class linkedList
             var current, previous, iteration = 0;
             current = this.head;
             previous = curr;
-
-            /** deleting first element */ 
+            /**
+             * deleting first element 
+             **/ 
             if (index === 0) {
                 this.head = current.next;
             }
@@ -112,6 +121,9 @@ class linkedList
             return current.element;
         }
     }
+    /* 
+    * remove the string or element,if it already exists
+    */
     removeElement(element) {
         var current = this.head;
         var previous = null;
@@ -131,6 +143,9 @@ class linkedList
         }
         return -1;
     }
+    /*
+    * checks the index value
+    */
     indexOf(element) {
         var count = 0;
         var current = this.head;
@@ -145,9 +160,15 @@ class linkedList
         *  not found */
         return -1;
     }
+    /*
+    checks if file is empty are not
+    */
     isEmpty() {
         return this.size == 0;
     }
+    /*
+    checks the string size in file
+    */
     sizeOflist() {
         //console.log(this.size);
         return this.size;
@@ -165,40 +186,41 @@ class linkedList
         console.log(string);
         return string;
     }
-    getNth(index) {       
-        var  current = this.head; 
-        var count = 0; 
-        while (current != null) { 
-            if (count == index) {
-                return current.element; 
-                count++; 
-                current = current.next; 
-            }
-        } 
-        return 0; 
-    }
 }
+/**
+* open file 
+**/
 fileSystem = require('fs');
+/**
+ * exports if a object that get exposed to a module and it is by default in every js file.
+ */
 module.exports = {
     unorderedList(array, element) {
-        var l = new linkedList();
+        /*
+        * create a new list
+        */
+        var list = new linkedList();
         for (var i = 0; i < array.length; i++) {
-            l.add(array[i]);
+            list.add(array[i]);
         }  
-        if (l.indexOf(element) == -1) {
-            l.add(element);
-            //l.printList();
-            console.log("added successfully..\n");
+        /*
+        * This condition checks for adding the item,if item not exists in file
+        */
+        if (list.indexOf(element) == -1) {
+            list.add(element);
+            console.log("Added successfully..\n");
         }
+        /*
+        * This condition checks for removing the item,if item already exists in file
+        */
         else {
-            l.removeElement(element);
-            //l.printList();
+            list.removeElement(element);
             console.log("Removed successfully....\n");
         }  
         /**
          * write operation to save updated list into the file.
          */
-        var dataWrite=l.printList();
+        var dataWrite=list.printList();
         fileSystem.writeFileSync("/home/admin1/HitheshGR/DataStructurePrograms/file.txt",dataWrite); 
     }
 }
