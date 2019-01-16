@@ -21,8 +21,7 @@ function orderedList(){
     * here we read the input from user that input function stored in utility.
     */
     var read=Utility.input();
-    read.question("Enter the element to be searched: ", 
-    function(num){
+    read.question("Enter the element to be searched: ",function(num){
         /**
          * Validating the element which should not accept any string value.
          */

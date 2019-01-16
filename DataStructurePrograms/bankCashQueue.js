@@ -16,8 +16,7 @@ var Utility=require('../DataStructurePrograms/utility/BCCQueue.js');
     /**
      * read the value of persons from user to perform queue operations.
      */
-function bankingCash()
-{
+function bankingCash(){
     var input=read.question("Enter the number of transactions: ");
     /**
      * validating if found any character string.
@@ -26,7 +25,7 @@ function bankingCash()
         console.log("Plz enter integers only....");
     }
     else{
-    Utility.Banking(read,input);
+        Utility.Banking(read,input);
     }
 }
 bankingCash();

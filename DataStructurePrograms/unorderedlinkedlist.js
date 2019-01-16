@@ -20,8 +20,7 @@ function unorderedList(){
      * here we read the input from user that input function stored in utility.
      */
     var read=Utility.input();
-    read.question("Enter the element to search: \n",
-    function(element){
+    read.question("Enter the element to search: \n",function(element){
         /**
          * Validating the element which should not accept any integer value.
          */

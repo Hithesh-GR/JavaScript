@@ -13,8 +13,7 @@ var simpleBP=require('../DataStructurePrograms/utility/SBPStack.js');
  *  @version        : v8.15.0
  *  @since          : 11-01-2019
  ******************************************************************************/
-function balancedParenthesis()
-{
+function balancedParenthesis(){
     var read=Utility.input();
     read.question("Enter an expression:",function(expression){
         /*

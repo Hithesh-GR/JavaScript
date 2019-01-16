@@ -18,8 +18,7 @@ function palindromeChecker(){
      * here we read the input from user that input function stored in utility.
      */
     var read=Utility.input();
-    read.question("Enter a string: ",function(str)
-    {
+    read.question("Enter a string: ",function(str){
         if(str>='a' && str<='z'||str>='A' && str>='Z'){
             dequeue.Palindrome(str);    
         }
@@ -36,7 +35,6 @@ function palindromeChecker(){
             console.log("Plz enter a character string only...");
         }
         read.close();
-    }
-    );
+    });
 }
 palindromeChecker();
