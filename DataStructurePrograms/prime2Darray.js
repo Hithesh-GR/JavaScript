@@ -10,21 +10,6 @@ var Prime=require('./utility/primeNumber2D.js');
  *  @version        : v8.15.0
  *  @since          : 11-01-2019
  ******************************************************************************/
-/*function primeNumbers(){
-    var read=Utility.input();
-    read.question("Enter min value: ",function(min){
-        read.question("Enter max value: ",function(max){
-            if(min>='a' && min<='z'|| min>='A' && min<='Z'){
-                console.log('Plz enter integers only..');
-            }
-            else{
-                prime.checkPrime(min,max);
-            }
-            read.close();
-        })
-    });  
-}
-primeNumbers();*/
 var show = require('util');
 var primes = [[],[],[],[],[],[],[],[],[],[]];
 var initial = 0;
