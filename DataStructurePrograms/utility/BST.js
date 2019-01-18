@@ -18,7 +18,7 @@ binomialCoeff(n, k) {
     // Since C(n, k) = C(n, n-k) 
     if (k > n - k) {
         k = n - k;
-    }
+    }  
     /*
     * Calculate value of  [n*(n-1)*---*(n-k+1)] [k*(k-1)*---*1] 
     */

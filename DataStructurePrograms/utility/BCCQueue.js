@@ -95,7 +95,7 @@ module.exports={
                     console.log("Total balance:"+balance);
                 }
                 /*
-                if bank balance is zero 
+                * if bank balance is zero 
                 */
                 else{
                     console.log("Running out of balance..");
