@@ -40,7 +40,6 @@ catalan(n) {
     var c = this.binomialCoeff(2 * n, n);
     var z = parseInt(n);
     var s = c / (z + 1);
-
     return s;
 },
 /**

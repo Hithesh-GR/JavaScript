@@ -4,6 +4,9 @@
 module.exports={
     writeFile(fileName,data){
         const fs = require('fs');
+        /*
+        * it is used to access the file
+        */
         fs.writeFile(fileName, data, function(err) {
             if(err) {
                 return console.log(err);

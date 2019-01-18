@@ -9,7 +9,9 @@
  *  @since          : 11-01-2019
  ******************************************************************************/
 var show = require('util');
-
+/*
+* creating a Qnode class to create any new node with null values.
+ */
 class Qnode{
     constructor(key)
     {
@@ -17,6 +19,9 @@ class Qnode{
         this.key = key;
     }
 }
+/*
+* creating QueuedLinkedList class to create any new node with null values.
+ */
 class QueuedLinkedList 
 {
 	constructor()
@@ -24,57 +29,48 @@ class QueuedLinkedList
 		this.front = null;
 		this.rear = null;
 	}
-	
-	enque(key)
-	{
+	/*
+	* it will add or store the items
+	*/
+	enque(key){
 		var temp = new Qnode(key);
-		
-		if(this.rear == null)
-		{
+		if(this.rear == null){
 			this.rear = this.front = temp;
 			return;
 		}
-		
 		this.rear.next = temp;
 		this.rear = temp;
 	}
-	
-	deque()
-	{
-		
-		if(this.front == null)
-		{
+	/*
+	* it will remove or access the items
+	*/
+	deque(){
+		if(this.front == null){
 			return null;
 		}
-		
 		var temp = this.front;
 		this.front = this.front.next;
-		
-		if (this.front == null) 
-		{
+		if (this.front == null) {
 			 this.rear = null;
 		}
-	        return temp.key; 
+	    return temp.key; 
 	}
-	
-	display()
-	{
+	/*display(){
 		var t = this.front;
-		
-		while(t!=null)
-		{
+		while(t!=null){
 			show.print(t.key);
 			if(t.next!=null)
 				show.print(" --> ");
 			t = t.next;
 		}
 		console.log("");
-    }
+	}*/
+	/*
+	* it will display the items
+	*/
     display2(){
         var t = this.front;
-		
-		while(t!=null)
-		{
+		while(t!=null){
 			show.print(t.key);
 			if(t.next!=null)
 				show.print("  ");
@@ -82,31 +78,25 @@ class QueuedLinkedList
 		}
         console.log();
         console.log();
-    }
-
+	}
+	/*
+	* it will display the calender
+	*/
     displayCalender(d){
-       
         var t = this.front;
         var t2 = this.front;
-      
-         var count = 0;
-    
-        while(t.key == " ")
-        {
-       show.print("   ");
-       
-       t = t.next;
+        var count = 0;
+        while(t.key == " "){
+       		show.print("   ");
+       		t = t.next;
         }
-        while(t!=null)
-        {   
+        while(t!=null){   
             count++;
             show.print(" ", t.key);
-         if(t.key < 10){
-             show.print(" ");
-         }
-         
-
-         if (((count + d) % 7 == 0) ) {
+        if(t.key < 10){
+            show.print(" ");
+        }
+        if (((count + d) % 7 == 0) ) {
             console.log("");
         }
        t = t.next;

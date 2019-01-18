@@ -19,6 +19,9 @@ function findBSTs() {
     console.log("Enter the number of BinarySearchTrees you  want: ");
     var binarysearchTree = binaryTree.inputread();
     try{
+        /*
+        * it will checks number of binary search trees we want to print
+        */
         if (binarysearchTree % 1 != 0) throw "Number required , Floating value found"
         if (binarysearchTree < 0) throw "BSTs value is Invalid , Please Enter a positive value"
         if (binarysearchTree == "") throw "No input found"
@@ -28,6 +31,9 @@ function findBSTs() {
             console.log("Enter number of nodes you want in the BST");
             var nodes = binaryTree.inputread();
             try{
+                /*
+                * it will checks number of nodes we want to print the binary trees
+                */      
                 if (nodes % 1 != 0) throw "Number required , Floating value found"
                 if (nodes < 0) throw "BSTs value is Invalid , Please Enter a positive value"
                 if (nodes == "") throw "No input found"

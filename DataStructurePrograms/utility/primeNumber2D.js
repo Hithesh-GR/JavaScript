@@ -8,10 +8,6 @@
  *  @version        : v8.15.0
  *  @since          : 11-01-2019
  ******************************************************************************/
-module.exports = {
-/**
- * exports:if a object that get exposed to a module and it is by default in every js file.
- */
 /*checkPrime(min1, max1) {
     let size = (Math.floor(max1 / 100) + 1);
     let range = Math.floor(min1 / 100);
@@ -61,6 +57,10 @@ module.exports = {
     console.log('\n Prime Numbers in the given range are :'+arr1)
     console.log(arr1);
 }*/
+/**
+* exports:if a object that get exposed to a module and it is by default in every js file.
+*/
+module.exports = {
     /*
     * This condition will checks the prime numbers.
     */

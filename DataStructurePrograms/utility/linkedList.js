@@ -19,7 +19,7 @@ class Node{
 }
 /**
  *  creating class linkedlist which will create new nodes and perform operation like 
- *  add,remove,insertAt,insertFrom.
+ *  add,remove,insertFirst,insert.
  */
 class LinkedList{
     constructor(){
@@ -87,6 +87,9 @@ class LinkedList{
         }
         return false;
     }
+    /*
+    * delete first item from file
+    */
     deleteFirst(){
         if(this.head==null){
             console.log("Linked List empty");
@@ -97,6 +100,9 @@ class LinkedList{
           this.size--;
           return n;
     }
+    /*
+    * pop first item from file
+    */
     pop(){
         if(this.head==null){
             console.log("No element present in the list");
@@ -116,6 +122,9 @@ class LinkedList{
         this.size--;
         return curr.element;
     }
+    /* 
+    * remove the string or element,if it already exists
+    */
     popIndex(index){
         if(index<0){
             console.log("please enter correct index");
@@ -138,6 +147,9 @@ class LinkedList{
         }
         return null;
     }
+    /*
+    * remove the item from file
+    */
     remove(element){
         var curr=this.head;
         if(curr.element==element){
@@ -156,6 +168,9 @@ class LinkedList{
         }
         return null;
     }
+    /*
+    * checks the items present in the file
+    */
     search(item){
         if(this.head==null){
             return false;
@@ -169,15 +184,24 @@ class LinkedList{
         }
         return false;
     }
+    /*
+    checks if file is empty are not
+    */
     isEmpty(){
         if(this.size==0){
             return true;
         }
         return false;
     }
+    /*
+    checks the string size in file
+    */
     size_of_list(){
         return this.size;
     }
+    /*
+    * display the given list after performing changes.
+    */
     displayQueue(){
         var curr=this.head;
         var str="";
@@ -190,6 +214,9 @@ class LinkedList{
         }
         return str;
     }
+    /*
+    * add the items in ascending order
+    */
     addAscending(){
         var main=this.head;
         var mainHead=null;
@@ -226,6 +253,9 @@ class LinkedList{
     }
        return this.head=mainHead;
 }
+    /*
+    * it shows items presents in the file
+    */
     show(){
         var curr=this.head;
         var str="";
@@ -239,6 +269,9 @@ class LinkedList{
         console.log(str);
         return str;
     }
+    /*
+    * get the data from file
+    */
     getData(){
         var curr=this.head;
         var str="";
@@ -252,6 +285,9 @@ class LinkedList{
         return str;
     }
 }
+/**
+ * exports if a object that get exposed to a module and it is by default in every js file.
+ */
 module.exports={
     LinkedList
 }

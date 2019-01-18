@@ -11,6 +11,9 @@
  ******************************************************************************/
 var calendar=require('../DataStructurePrograms/utility/calendar2D.js');
 var show = require('util');
+/*
+* it will prints the month
+*/
 var months = [
     "",
     "January", "February", "March",
@@ -39,16 +42,16 @@ try {
     */
     if (newMonth == 2 && calendar.isLeapYear(newYear)) days[newMonth] = 29;
 
-    console.log("   " + months[newMonth] + " " + year);
+    console.log(" " + months[newMonth] + "       " +year);
     console.log(" S  M Tu  W Th  F  S");
     /* 
     * starting day
     */
-    var d = calendar.day(newMonth, 1, newYear);
+    var day = calendar.day(newMonth,1, newYear);
     /*
     * print the calendar
     */
-    for (let i = 0; i < d; i++) {
+    for (let i = 0; i < day; i++) {
         show.print("   ");
     }
     for (var i = 1; i <= days[newMonth]; i++) {
@@ -56,7 +59,7 @@ try {
         if (i < 10) {
             show.print(" ");
         }
-        if (((i + d) % 7 == 0) || (i == days[newMonth])) {
+        if (((i + day) % 7 == 0) || (i == days[newMonth])) {
             console.log(" ");
         }
     }

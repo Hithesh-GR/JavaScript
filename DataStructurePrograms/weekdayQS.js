@@ -11,16 +11,20 @@
  *  @since          : 11-01-2019
  ******************************************************************************/
 var calendar=require('./utility/calendar2D.js');
-//var show = require('util');
 var linkedQueue=require('../DataStructurePrograms/utility/primeAnaQueue.js');
 var linkedStack=require('../DataStructurePrograms/utility/primeAnaStack.js');
+/*
+* creating calender function to create any new node with null values.
+*/
 function calender() {
     var stackLink1 = new linkedStack.StackedLink;
     var stackLink2 = new linkedStack.StackedLink;
 
     var linkedqueue = new linkedQueue.QueuedLinkedList;
     var linkedqueue2 = new linkedQueue.QueuedLinkedList;
-
+    /*
+    * it will display the year
+    */
     var months = [
         "",
         "January", "February", "March",
@@ -34,7 +38,9 @@ function calender() {
     var days = [
         0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
     ];
-
+    /*
+    * it will display the day
+    */
     var day = ["S", "M", "Tu", "W", "Th", "F", "S"];
 
     try {
@@ -70,8 +76,6 @@ function calender() {
         for (let i = 1; i <= days[newMonth]; i++) {
             linkedqueue2.enque(i);
         }
-        // var x = linkedqueue.deque();
-        // console.log(x);
         for (let i = 0; i < 7; i++) {
             stackLink1.push(linkedqueue.deque());
         }

@@ -10,9 +10,10 @@
  *  @since          : 11-01-2019
  ******************************************************************************/
 var calendar=require('./utility/calendar2D.js');
-//var show = require('util');
 var linkedQueue=require('../DataStructurePrograms/utility/primeAnaQueue.js');
-
+/*
+* creating calender function to create any new node with null values.
+ */
 function calender(){
     var linkedqueue = new linkedQueue.QueuedLinkedList;
     var linkedqueue2 = new linkedQueue.QueuedLinkedList;
@@ -33,7 +34,9 @@ function calender(){
     try {
         var month = + process.argv[2];
         var year = + process.argv[3];
-
+        /*
+        * here we have to pass the integer values
+        */
         var newMonth = parseInt(month);
         var newYear = parseInt(year);
 
