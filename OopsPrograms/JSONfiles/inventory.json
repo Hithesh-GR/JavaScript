@@ -2,42 +2,42 @@
     "Rice": [
         {
             "name": "WhiteRice",
-            "weight": 25,
-            "price": 1050
+            "weight": 589,
+            "price": 50
         },
         {
             "name": "BlackRice",
             "weight": 25,
-            "price": 1500
+            "price": 15
         },
         {
             "name": "BrownRice",
             "weight": 25,
-            "price": 1850
+            "price": 18
         }
     ],
     "Pulses": [
         {
             "name": "KidneyBeans",
             "weight": 15,
-            "price": 450
+            "price": 45
         },
         {
             "name": "LimaBeans",
             "weight": 20,
-            "price": 600
+            "price": 60
         },
         {
             "name": "BroadBeans",
             "weight": 25,
-            "price": 777
+            "price": 77
         }
     ],
     "Wheats": [
         {
             "name": "BreadWheat",
             "weight": 22,
-            "price": 440
+            "price": 44
         },
         {
             "name": "DurumWheat",
