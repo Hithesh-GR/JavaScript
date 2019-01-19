@@ -1,6 +1,6 @@
 var fileSystem = require('fs');
 var Utility=require('../utility/Utility');
-var ordered=require('../DataStructurePrograms/utility/orderedlist');
+var ordered=require('../DataStructurePrograms/utility/orderedList');
 var data = fileSystem.readFileSync('file1.txt');
 console.log("String read from file: \n\n"+data);
 data= data.toString().split(' ');
@@ -8,7 +8,7 @@ data= data.toString().split(' ');
  *  @Purpose        : Read a List of Numbers from a file and arrange it ascending Order in a Linked list
                       Take user input for a number, if found then pop the number out of the list else 
                       insert the number in appropriate position.     
- *  @file           : orderedlinkedlist.js
+ *  @file           : orderedLinkedlist.js
  *  @overview       : We read a integer string from file then perform linked list operations and then we 
  *                    arrange it in sorted manner,we will search an integer if it is found then delete
  *                    it and if not found then add it.     

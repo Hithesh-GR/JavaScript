@@ -3,14 +3,14 @@
                       the day(i.e S,M,T,W,Th,..)and the Date(1,2,3..).The WeekDay objects
                       are stored in a Queue implemented using Linked List.Further maintain
                       also a Week Object in a Queue to finally display the Calendar.
- *  @file           : weekday.js
+ *  @file           : weekDay.js
  *  @overview       : Here we have to print calendar through Queue implemented using Linked List.   
  *  @author         : HITHESH G R
  *  @version        : v8.15.0
  *  @since          : 11-01-2019
  ******************************************************************************/
 var calendar=require('./utility/calendar2D.js');
-var linkedQueue=require('../DataStructurePrograms/utility/primeAnaQueue.js');
+var linkedQueue=require('./utility/primeAnaQueue.js');
 /*
 * creating calender function to create any new node with null values.
  */

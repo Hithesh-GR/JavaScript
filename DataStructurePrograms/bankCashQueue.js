@@ -12,7 +12,7 @@
  *  @since          : 11-01-2019
  ******************************************************************************/
 var read=require('readline-sync');
-var Utility=require('../DataStructurePrograms/utility/BCCQueue.js');
+var Utility=require('../DataStructurePrograms/utility/bccQueue.js');
     /**
      * read the value of persons from user to perform queue operations.
      */

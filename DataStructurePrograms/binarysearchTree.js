@@ -14,7 +14,7 @@
  *  @version        : v8.15.0
  *  @since          : 11-01-2019
  ******************************************************************************/
-var binaryTree=require('../DataStructurePrograms/utility/BST.js');
+var binaryTree=require('../DataStructurePrograms/utility/bsTree.js');
 function findBSTs() {
     console.log("Enter the number of BinarySearchTrees you  want: ");
     var binarysearchTree = binaryTree.inputread();

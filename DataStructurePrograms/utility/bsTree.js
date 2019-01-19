@@ -1,7 +1,7 @@
 /******************************************************************************
  *  Execution       :   1. default node         cmd> node fileName.js                 
  *  Purpose         : TO deploy all the business logic.
- *  @file           : BST.js
+ *  @file           : bsTree.js
  *  @overview       : ALl the business logic bus be here.
  *  @module         : read-line modules are installed
  *  @author         : HITHESH G R
