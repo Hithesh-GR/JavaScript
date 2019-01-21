@@ -1,5 +1,6 @@
-var Utility=require('../utility/Utility');
-var simpleBP=require('../DataStructurePrograms/utility/sbpStack.js');
+var Utility = require('../utility/Utility');
+var simpleBP = require('../DataStructurePrograms/utility/sbpStack.js');
+
 /******************************************************************************
  *  @Purpose        : Take an Arithmetic Expression such that parentheses are used 
                       to order the performance of operations.Ensure parentheses must 
@@ -13,19 +14,19 @@ var simpleBP=require('../DataStructurePrograms/utility/sbpStack.js');
  *  @version        : v8.15.0
  *  @since          : 11-01-2019
  ******************************************************************************/
-function balancedParenthesis(){
-    var read=Utility.input();
-    read.question("Enter an expression:",function(expression){
+function balancedParenthesis() {
+    var read = Utility.input();
+    read.question("Enter an expression:", function (expression) {
         /*
          * if expression is null then print an error message.
          */
-        if(expression==""){
+        if (expression == "") {
             console.log("plz enter an expression");
         }
-        else{
+        else {
             simpleBP.balancedParenthesis(expression);
         }
         read.close();
-    }); 
+    });
 }
 balancedParenthesis();
