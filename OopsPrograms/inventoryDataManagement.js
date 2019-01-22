@@ -1,14 +1,13 @@
-/******************************************************************************
+/*************************************************************************************************
  *  @Purpose        : To create the JSON from Inventory Object and output the JSON String.     
  *  @file           : inventoryDataManagement.js
- *  @overview       : To Extend the inventory program to Create InventoryManager to manage the Inventory.
-                      The Inventory Manager will use InventoryFactory to create Inventory Object from JSON.
-                      The InventoryManager will call each Inventory Object in its list to calculate the Inventory
-                      Price and then call the Inventory Object to return the JSON String  
+ *  @overview       : Create a JSON file having Inventory Details for Rice, Pulses and Wheats 
+                      with properties name, weight, price per kg.Then read Json file and calculate 
+                      value of each inventory. 
  *  @author         : HITHESH G R
  *  @version        : v8.15.0
  *  @since          : 18-01-2019
- ******************************************************************************/
+ ***************************************************************************************************/
 var prompt = require('prompt-sync')();//node-module prompt-sync
 var fs = require('fs');
 var data = fs.readFileSync('../OopsPrograms/JSONfiles/inventory.json'); //read file from json
@@ -16,8 +15,9 @@ var data = fs.readFileSync('../OopsPrograms/JSONfiles/inventory.json'); //read f
 * function JSON.parse() is used to convert the string into a JavaScript Objects
 */
 var jsonGrocery = JSON.parse(data);
-console.log(jsonGrocery);
+console.log(" data-->\n",jsonGrocery);
 function inventory() {
+    console.log("Inventory Details-->");
     console.log("1: Rice");
     console.log("2: Wheat");
     console.log("3: Pulses");
@@ -69,7 +69,10 @@ function inventory() {
                 console.log("please enter integers only!");
             }
             break;
-        default://validating number 
+            /**
+             * validating a number item
+             */
+        default: 
             console.log("Please select a valid item!!");
     }
 }

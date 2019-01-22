@@ -1,0 +1,18 @@
+{
+    "Stock": [{
+    "stockName": "Google",
+    "numberOfShare": 5,
+    "price": 200
+    },
+    {
+    "stockName": "Microsoft",
+    "numberOfShare": 4,
+    "price": 700
+    },
+    {
+    "stockName": "Apple",
+    "numberOfShare": 1,
+    "price": 400
+    }
+    ]
+    }
