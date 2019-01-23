@@ -15,7 +15,7 @@ var data = fs.readFileSync('../OopsPrograms/JSONfiles/inventory.json'); //read f
 * function JSON.parse() is used to convert the string into a JavaScript Objects
 */
 var jsonGrocery = JSON.parse(data);
-console.log(" data-->\n",jsonGrocery);
+console.log(" data-->\n", jsonGrocery);
 function inventory() {
     console.log("Inventory Details-->");
     console.log("1: Rice");
@@ -69,10 +69,10 @@ function inventory() {
                 console.log("please enter integers only!");
             }
             break;
-            /**
-             * validating a number item
-             */
-        default: 
+        /**
+         * validating a number item
+         */
+        default:
             console.log("Please select a valid item!!");
     }
 }

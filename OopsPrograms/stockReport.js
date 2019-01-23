@@ -70,9 +70,9 @@ function stackReport() {
                 console.log("please enter integers only!");
             }
             break;
-            /**
-             * validating a number choice
-             */
+        /**
+         * validating a number choice
+         */
         default:
             console.log("Please select a valid choice!!");
     }

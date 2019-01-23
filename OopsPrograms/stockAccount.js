@@ -43,21 +43,21 @@ class stockAccount {
         }
         for (var i = 1; i <= stock; i++) {
             try {
-            var name = prompt('enter the name: ');
-            if (!isNaN(name)) throw "invalid input"
-            var number = prompt('enter the number of share: ');
-            if (isNaN(number)) throw "invalid input"
-            var price = prompt('enter the price: ');
-            if (isNaN(price)) throw "invalid input"
-            arrayOfObjects.push({
-                "name": name,
-                "number_of_share": number,
-                "price": price
-            })
-            console.log(arrayOfObjects);
-        } catch (err) {
-            console.log(err);
-        }
+                var name = prompt('enter the name: ');
+                if (!isNaN(name)) throw "invalid input"
+                var number = prompt('enter the number of share: ');
+                if (isNaN(number)) throw "invalid input"
+                var price = prompt('enter the price: ');
+                if (isNaN(price)) throw "invalid input"
+                arrayOfObjects.push({
+                    "name": name,
+                    "number_of_share": number,
+                    "price": price
+                })
+                console.log(arrayOfObjects);
+            } catch (err) {
+                console.log(err);
+            }
         }
     }
     /**
