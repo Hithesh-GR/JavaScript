@@ -24,7 +24,7 @@ module.LinkedStack = function () {
     var head = null;
     var size = null;
     /**
-     * Push function
+     * Push function:
      * Iterate through the list and then add the node to the last node in the list
      */
     this.pushToStack = function (item) {
@@ -46,7 +46,7 @@ module.LinkedStack = function () {
         }
     }
     /**
-     * Pop Function
+     * Pop Function:
      * To get the last item and remove it from the list
      */
     this.popFromStack = function () {

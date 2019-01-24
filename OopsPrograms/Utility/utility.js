@@ -11,7 +11,7 @@
 module.exports =
     {
         /**
-         * 
+         * sort the ithems
          * @param {*} alphabet 
          */
         sort(alphabet) {

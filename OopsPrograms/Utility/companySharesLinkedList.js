@@ -8,12 +8,19 @@
  *  @version        : v8.15.0
  *  @since          : 18-01-2019
  ******************************************************************************/
+/**
+* creating node function to create any new node with null values.
+*/
 class Node {
     constructor(data) {
         this.data = data;
         this.next = null;
     }
 }
+/**
+ *  creating class linkedlist which will create new nodes and perform operation like 
+ *  add,remove,insertFirst,insert.
+ */
 class LinkedList {
     constructor() {
         this.head = null;
@@ -29,18 +36,18 @@ class LinkedList {
         var node = new Node(data);
         /**
          * to store current node
-         */ 
+         */
         var current;
         /**
          * if list is Empty add the data and make it head
-         */ 
+         */
         if (this.head == null)
             this.head = node;
         else {
             current = this.head;
             /**
              * iterate to the end of the list
-             */ 
+             */
             while (current.next) {
                 current = current.next;
             }
@@ -53,7 +60,7 @@ class LinkedList {
     }
     /**
      *  prints the list items
-     */ 
+     */
     printList() {
         var curr = this.head;
         var str = [];
@@ -77,18 +84,18 @@ class LinkedList {
     }
     /**
      * finds the index of data
-     */ 
+     */
     indexOf(data) {
         var count = 0;
         var current = this.head;
         //console.log('DATA IS :',data);
         /**
          * iterae over the list
-         */ 
+         */
         while (current != null) {
             /**
              * compare each data of the list with given data
-             */ 
+             */
             if (current.data === data)
                 return count;
             count++;
@@ -97,6 +104,9 @@ class LinkedList {
         // not found 
         return -1;
     }
+    /**
+    * checks the items present in the file
+    */
     search(str) {
         var current = this.head;   //Initialize current 
         while (current != null) {
@@ -108,7 +118,7 @@ class LinkedList {
     }
     /**
      * removes an data from the specified location
-     */ 
+     */
     removeFrom(index) {
         if (index > 0 && index > this.size)
             return -1;
@@ -118,14 +128,14 @@ class LinkedList {
             prev = curr;
             /**
              * deleting first data
-             */ 
+             */
             if (index === 0) {
                 this.head = curr.next;
             }
             else {
                 /**
                  * iterate over the list to the position to removce an data
-                 */ 
+                 */
                 while (iterator < index) {
                     iterator++;
                     prev = curr;
@@ -133,7 +143,7 @@ class LinkedList {
                 }
                 /**
                  * remove the data
-                 */ 
+                 */
                 prev.next = curr.next;
             }
             this.size--;
@@ -142,14 +152,19 @@ class LinkedList {
     }
     /**
      * gives the size of the list
-     */ 
+     */
     listSize() {
         return this.size;
     }
+    /**
+    * get the data from file
+    */
     get(index) {
         var current = this.head;
-        var count = 0; /* index of Node we are 
-                          currently looking at */
+        var count = 0;
+        /** 
+        * index of Node we are currently looking at 
+        */
         while (current != null) {
             if (count == index)
                 return current.data;
@@ -157,9 +172,15 @@ class LinkedList {
             current = current.next;
         }
     }
+    /**
+    * remove the item from file
+    */
     deleteList() {
         return this.head = null;
     }
+    /**
+    * remove the string or element,if it already exists
+    */
     popIndex(index) {
         if (index < 0) {
             console.log("please enter correct index");
@@ -182,6 +203,9 @@ class LinkedList {
         }
         return null;
     }
+    /*
+    * delete first item from file
+    */
     deleteFirst() {
         if (this.head == null) {
             console.log("Linked List empty");
@@ -193,7 +217,9 @@ class LinkedList {
         return n;
     }
 }
-module.exports =
-    {
-        LinkedList
-    }
+/**
+ * exports if a object that get exposed to a module and it is by default in every js file.
+ */
+module.exports = {
+    LinkedList
+}

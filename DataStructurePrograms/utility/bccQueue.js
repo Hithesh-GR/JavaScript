@@ -41,13 +41,13 @@ class Queue{
         return this.items[0];
     }
     /*
-    checks if queue is empty are not
+    * checks if queue is empty are not
     */
     isEmpty(){
         return this.items.length==0;
     }
     /*
-    returns the length of queue
+    * returns the length of queue
     */
     length(){
         return this.items.length;

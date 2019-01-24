@@ -57,7 +57,7 @@ function deckOfCards() {
          */
         console.log("cards recieved by player no. " + (i + 1));
         for (let j = 0; j < 9; j++) {
-            var arr = [];
+            var arr = [[],[],[],[]];
             /**
              * push each randomly calculated array values
              */

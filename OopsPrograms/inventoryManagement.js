@@ -14,7 +14,7 @@
  */
 var fs = require('fs');
 /**
- * using prompy-sync asking user to enter the input
+ * using prompt-sync asking user to enter the input
  */
 var prompt = require('prompt-sync')();
 /**

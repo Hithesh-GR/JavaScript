@@ -17,11 +17,17 @@ class Node {
         this.next = null;
     }
 }
+/**
+* creating Queue class to create any new node with null values.
+*/
 class Queue {
     constructor() {
         this.head = null;
         this.tail = null;
     }
+    /**
+	* it will add or store the items
+	*/
     enqueue(data) {
         var newNode = new Node(data);
         if (this.head === null) {
@@ -32,6 +38,9 @@ class Queue {
             this.tail = newNode;
         }
     }
+    /**
+	* it will remove or access the items
+	*/
     dequeue() {
         var newNode;
         if (this.head !== null) {
@@ -50,6 +59,9 @@ class Queue {
         }
         return week;
     }
+    /**
+	* it will display the items
+	*/
     display() {
         var curr = this.head;
         while (curr) {
@@ -58,9 +70,15 @@ class Queue {
             curr = curr.next;
         }
     }
+    /**
+    * checks if queue is empty are not
+    */
     isEmpty() {
         return this.head == null;
     }
+    /**
+	* it will display the calender
+	*/
     displayCalender(d) {
         var show = require('util');
         var t = this.head;
@@ -79,6 +97,9 @@ class Queue {
         }
         count = 0;
     }
+    /**
+	* it will display the items
+	*/
     display2() {
         var t = this.head;
         var show = require('util');
@@ -90,6 +111,9 @@ class Queue {
         }
         console.log();
     }
+    /*
+	* it will display the items in reverse
+	*/
     displayReverse(head) {
         var show = require('util');
         if (head == null)
@@ -100,10 +124,16 @@ class Queue {
         if (head.next != head)
             show.print("-->");
     }
+    /**
+    * get the data 
+    */
     getHead() {
         return this.head;
     }
 }
+/**
+ * exports if a object that get exposed to a module and it is by default in every js file.
+ */
 module.exports = {
     Queue
 }

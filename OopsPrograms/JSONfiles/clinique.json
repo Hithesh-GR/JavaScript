@@ -1,0 +1,71 @@
+{
+    "Doctors": [
+        {
+            "Name": "Dr.Hithesh",
+            "ID": 120,
+            "Specialization": "Allergists",
+            "Availability": "Both"
+        },
+        {
+            "Name": "Dr.Prajwal",
+            "ID": 150,
+            "Specialization": "Psychiatrist",
+            "Availability": "PM"
+        },
+        {
+            "Name": "Dr.Prakash",
+            "ID": 200,
+            "Specialization": "Cardiologist",
+            "Availability": "AM"
+        },
+        {
+            "Name": "Dr.Lekhan",
+            "ID": 420,
+            "Specialization": "Surgeon",
+            "Availability": "PM"
+        },
+        {
+            "Name": "Dr.Lakshmi",
+            "ID": 640,
+            "Specialization": "Pediatrician",
+            "Availability": "Both"
+        }
+    ],
+    "Patients": [
+        {
+            "Name": "Anil Mehta",
+            "ID": 100,
+            "mobNo": 6020412405,
+            "Age": 80,
+            "Appointed_To": "Dr.Hithesh"
+        },
+        {
+            "Name": "Surendra",
+            "ID": 200,
+            "mobNo": "7070707025",
+            "Age": "20",
+            "Appointed_To": "Dr.Prajwal"
+        },
+        {
+            "Name": "Anjan",
+            "ID": 300,
+            "mobNo": "8501010112",
+            "Age": "30",
+            "Appointed_To": "Dr.Prakash"
+        },
+        {
+            "Name": "Karthik Boddu",
+            "ID": 400,
+            "mobNo": "8702020206",
+            "Age": "60",
+            "Appointed_To": "Dr.Lekhan"
+        },
+        {
+            "Name": "Krishna",
+            "ID": 500,
+            "mobNo": "9801010105",
+            "Age": "90",
+            "Appointed_To": "Dr.Lakshmi"
+        }
+    ]
+}
