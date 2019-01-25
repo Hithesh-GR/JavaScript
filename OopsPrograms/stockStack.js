@@ -96,7 +96,7 @@ module.LinkedStack = function () {
      */
     this.printStack = function () {
         var current = head;
-        while (current.next !== null) {
+        while (current.next != null) {
             //console.log("Item "+current.item + " is on the stack.");
             console.log(current.item);
             current = current.next;
@@ -118,8 +118,8 @@ class Comapany {
              * asking user to enter the input
              */
             console.log();
-            var Name = read.question("Enter the name of item purchased: ");
-            var number = read.question("Enter the number of items purchased: ");
+            var Name = read.question("Enter the name of item you want to purchase: ");
+            var number = read.question("Enter the item number you  purchased: ");
             var price = read.question("Enter the price per item: ");
             /**
              * customer is object
@@ -136,22 +136,22 @@ class Comapany {
             /**
              * from Date()function getting hrs,min,sec
              */
-            var date = new Date();
+            /*var date = new Date();
             var time = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-            console.log("The purchase time is " + time);
+            console.log("The purchase time is " + time);*/
         }
     }
     /**
      * sell()-subtracting object from the json
      */
     sell() {
-        var num = read.question("\nEnter number of elements you want to sell: ");
+        var num = read.question("\nEnter the item number you want to sell: ");
         for (var j = 0; j < num; j++) {
             stack.popFromStack();
         }
-        var date = new Date();
+        /*var date = new Date();
         var time = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-        console.log("The item is sold at " + time);
+        console.log("The item is sold at " + time);*/
     }
     accountReport() {
         console.log('The total items purchased are :');
@@ -161,7 +161,12 @@ class Comapany {
 var stack = new module.LinkedStack();
 var c = new Comapany();
 var totalPrice = 1;
-var num = read.question("Please enter the total number of stocks purchased: ");
+try {
+    var num = read.question("Please enter the total number of stocks you want to purchase : ");
+    if (isNaN(num)) throw "invalid input"
+} catch (err) {
+    console.log(err);
+}
 c.buy(num);
 c.accountReport();
 c.sell();

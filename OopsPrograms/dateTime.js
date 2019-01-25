@@ -65,7 +65,7 @@ class Comapany {
      */
     sell() {
         try {
-            var num = read.question("Enter the number of elements you want to sell: ");
+            var num = read.question("Enter the item number you want to sell: ");
             if (isNaN(num)) throw "invalid input"
             /**
              * removing entry from the queue
@@ -102,7 +102,7 @@ var d = new Comapany();
  * asking user to enter the stock value
  */
 try {
-    var num = read.question("Please enter the total number of stocks purchased: ");
+    var num = read.question("Please enter the total number of stocks you want to purchase : ");
     if (isNaN(num)) throw "invalid input"
 } catch (err) {
     console.log(err);
